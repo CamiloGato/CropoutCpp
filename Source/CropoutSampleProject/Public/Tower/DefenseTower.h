@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "DefenseTower.generated.h"
 
+class UBoxComponent;
+
 UCLASS(Blueprintable)
 class CROPOUTSAMPLEPROJECT_API ADefenseTower : public AActor
 {
