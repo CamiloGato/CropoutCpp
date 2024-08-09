@@ -1,10 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "PlayerAvatar.h"
-
+#include "CropoutSampleProject/Public/Player/PlayerAvatar.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
 
 // Sets default values
 APlayerAvatar::APlayerAvatar()
@@ -31,6 +28,21 @@ void APlayerAvatar::BeginPlay()
 void APlayerAvatar::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+int APlayerAvatar::GetHealthPoints()
+{
+	return _HealthPoints;
+}
+
+bool APlayerAvatar::IsKilled()
+{
+	return _HealthPoints <= 0.0f;
+}
+
+bool APlayerAvatar::CanAttack()
+{
+	return _AttackCountingDown <= 0.0f;
 }
 
 // Called to bind functionality to input
